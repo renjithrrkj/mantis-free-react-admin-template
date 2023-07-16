@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { Box } from '@mui/material';
+
 
 // material-ui
 import {
   Avatar,
   AvatarGroup,
-  Box,
   Button,
   Grid,
   List,
@@ -22,10 +23,11 @@ import {
 import OrdersTable from './OrdersTable';
 import IncomeAreaChart from './IncomeAreaChart';
 import MonthlyBarChart from './MonthlyBarChart';
-import ReportAreaChart from './ReportAreaChart';
 import SalesColumnChart from './SalesColumnChart';
 import MainCard from 'components/MainCard';
 import AnalyticEcommerce from 'components/cards/statistics/AnalyticEcommerce';
+import Search from '../../layout/MainLayout/Header/HeaderContent/Search';
+
 
 // assets
 import { GiftOutlined, MessageOutlined, SettingOutlined } from '@ant-design/icons';
@@ -80,6 +82,10 @@ const DashboardDefault = () => {
         <Typography variant="h5">Dashboard</Typography>
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3}>
+  
+      <Search />
+        
+  
         <AnalyticEcommerce title="Total Page Views" count="4,42,236" percentage={59.3} extra="35,000" />
       </Grid>
       <Grid item xs={12} sm={6} md={4} lg={3}>
@@ -148,7 +154,7 @@ const DashboardDefault = () => {
       </Grid>
 
       {/* row 3 */}
-      <Grid item xs={12} md={7} lg={8}>
+      <Grid item xs={12} md={7} lg={6}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
             <Typography variant="h5">Recent Orders</Typography>
@@ -159,7 +165,7 @@ const DashboardDefault = () => {
           <OrdersTable />
         </MainCard>
       </Grid>
-      <Grid item xs={12} md={5} lg={4}>
+      <Grid item xs={12} md={5} lg={6}>
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
             <Typography variant="h5">Analytics Report</Typography>
@@ -167,21 +173,7 @@ const DashboardDefault = () => {
           <Grid item />
         </Grid>
         <MainCard sx={{ mt: 2 }} content={false}>
-          <List sx={{ p: 0, '& .MuiListItemButton-root': { py: 2 } }}>
-            <ListItemButton divider>
-              <ListItemText primary="Company Finance Growth" />
-              <Typography variant="h5">+45.14%</Typography>
-            </ListItemButton>
-            <ListItemButton divider>
-              <ListItemText primary="Company Expenses Ratio" />
-              <Typography variant="h5">0.58%</Typography>
-            </ListItemButton>
-            <ListItemButton>
-              <ListItemText primary="Business Risk Cases" />
-              <Typography variant="h5">Low</Typography>
-            </ListItemButton>
-          </List>
-          <ReportAreaChart />
+        <OrdersTable />
         </MainCard>
       </Grid>
 
